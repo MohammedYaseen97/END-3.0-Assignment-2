@@ -2,7 +2,7 @@
 Initialize the weights randomly, usually with mean 0 and variance 1. The small scale helps in better convergence<br />
 Below is a screenshot of the neural network and the randomly assigned weights<br />
 ![Screenshot](./Screenshot.png)
-<br /> <br />
+.<br /> <br />
 
 ﻿__Step 2 : Perform forward propagation__ <br />
 In each layer, perform the following operations in order to carry out forward propagation, until you receive the final output (in our case, a_o1 and a_o2) : <br />
@@ -10,14 +10,14 @@ In each layer, perform the following operations in order to carry out forward pr
    Ex : h1 = w1*i1 + w2*i2 <br />
 2. A non linear activation function is then applied to the dot product to produce the output of the neuron. This helps to maintain non linearity and complexity across the network enabling it to learn complex tasks. <br />
    Ex : a_h1 = σ(h1) = 1/(1 + exp(-h1)) [Sigmoid Activation function]<br />
-<br />
+.<br />
 
 ﻿__Step 3 : Calculate the error / loss__ <br />
 After we receive our output, we can measure how different it is from expected output using a loss function. In our case, we have used square loss function<br />
    E1 = 1/2 * (t1 - a_o1)**2 <br />
    E2 = 1/2 * (t2 - a_o2)**2 <br />
    E_tot = E1 + E2 <br />
-<br />
+.<br />
 
 ﻿__Step 4 : Change the weights to minimise the loss__ <br />
 Since loss is a non linear function of weights, weights can be modified to minimise the loss by using gradient descent<br />
@@ -25,7 +25,7 @@ Since loss is a non linear function of weights, weights can be modified to minim
 Where lr stands for learning rate. lr helps to control the rate of change of weights, so as not to overdo it. <br />
 For convenience, we can use the chain rule for calculating partial derivatives. <br />
    Ex : ∂E_t/∂w5 = dE_t/∂o1 * ∂o1/dw5 <br />
-Update all weights simultaneously <br />
+Update all weights simultaneously. <br />
 <br />
 
 ﻿__Step 5 : Repeat steps 2, 3, 4 with same inputs and updated weights in each iteration__ <br />
